@@ -1,0 +1,23 @@
+/* ── Typography ── */
+h1, h2, h3, h4 {
+  line-height: 1.2;
+}
+
+p { margin-bottom: 0.75em; }
+p:last-child { margin-bottom: 0; }
+
+strong { font-weight: 600; }
+
+/* Page section heading style */
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-style: italic;
+  margin-bottom: 16px;
+}
+
+/* Muted helper text */
+.text-muted {
+  color: var(--color-muted);
+  font-size: 13px;
+}

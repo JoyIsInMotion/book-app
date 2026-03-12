@@ -1,0 +1,33 @@
+/* ── Login / Register ── */
+.auth-page {
+  max-width: 400px;
+  margin: 72px auto;
+  padding: 0 24px;
+}
+
+.auth-card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 36px 32px;
+  box-shadow: var(--shadow);
+}
+
+.auth-card h1 {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-style: italic;
+  margin-bottom: 28px;
+  color: var(--color-ink);
+}
+
+.auth-card .form-group { margin-bottom: 16px; }
+
+.auth-card .btn { width: 100%; text-align: center; margin-top: 8px; }
+
+.auth-footer {
+  text-align: center;
+  font-size: 13px;
+  color: var(--color-muted);
+  margin-top: 16px;
+}

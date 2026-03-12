@@ -1,0 +1,17 @@
+/* ── Catalogue (All Books) ── */
+.catalogue {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 40px 24px 64px;
+}
+
+.catalogue h1 {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  margin-bottom: 4px;
+}
+.catalogue .subtitle {
+  color: var(--color-muted);
+  font-size: 14px;
+  margin-bottom: 8px;
+}

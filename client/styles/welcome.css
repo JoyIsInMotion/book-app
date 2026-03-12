@@ -1,0 +1,36 @@
+/* ── Home / Welcome ── */
+.home-hero {
+  background: var(--color-ink);
+  color: var(--color-bg);
+  padding: 72px 24px;
+  text-align: center;
+}
+
+.home-hero h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(36px, 6vw, 64px);
+  font-style: italic;
+  color: var(--color-accent);
+  margin-bottom: 16px;
+}
+
+.home-hero p {
+  font-size: 18px;
+  color: rgba(250,247,242,0.65);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.recent-picks {
+  padding: 56px 24px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.recent-picks h2 {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  margin-bottom: 24px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--color-accent);
+}
