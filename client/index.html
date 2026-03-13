@@ -1,138 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BookVault</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookVault</title>
+    <link rel="stylesheet" href="/styles/style.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles/typography.css" />
-  <link rel="stylesheet" href="styles/style.css" />
-  <link rel="stylesheet" href="styles/navigation.css" />
-  <link rel="stylesheet" href="styles/welcome.css" />
-  <link rel="stylesheet" href="styles/all-books.css" />
-  <link rel="stylesheet" href="styles/details.css" />
-  <link rel="stylesheet" href="styles/create-edit.css" />
-  <link rel="stylesheet" href="styles/login-register.css" />
-  <link rel="stylesheet" href="styles/comments.css" />
-</head>
-<body>
+        <!-- Main Content -->
+        <main id="main-content">
+        </main>
 
-  <!-- ╔══════════════════════════════╗ -->
-  <!-- ║         NAVIGATION           ║ -->
-  <!-- ╚══════════════════════════════╝ -->
-  <nav id="site-nav">
-    <div className="nav-inner">
-      <a className="nav-brand" href="/">BookVault</a>
+      
 
-      <!-- Guest links (shown when NOT logged in) -->
-      <div id="guest-nav">
-        <a href="/catalogue">All Books</a>
-        <a href="/login">Login</a>
-        <a href="/register">Register</a>
-      </div>
+        <!-- Login Page ( Only for Guest users ) -->
+        <section id="login-page" className="auth">
+            <form id="login">
+                <div className="container">
+                    <div className="brand-logo"></div>
+                    <h1>Login</h1>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="reader@mail.com">
+                    <label for="login-pass">Password:</label>
+                    <input type="password" id="login-password" name="password">
+                    <input type="submit" className="btn submit" value="Login">
+                    <p className="field">
+                        <span>Don't have an account? <a href="#">Register here</a></span>
+                    </p>
+                </div>
+            </form>
+        </section>
 
-      <!-- User links (shown when logged in) -->
-      <div id="user-nav" style="display:none">
-        <a href="/catalogue">All Books</a>
-        <a href="/add-book">Add Book</a>
-        <span id="user-email"></span>
-        <a href="#" id="logout-btn">Logout</a>
-      </div>
+        <!-- Register Page ( Only for Guest users ) -->
+        <section id="register-page" className="content auth">
+            <form id="register">
+                <div className="container">
+                    <div className="brand-logo"></div>
+                    <h1>Register</h1>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="reader@mail.com">
+                    <label for="pass">Password:</label>
+                    <input type="password" name="password" id="register-password">
+                    <label for="con-pass">Confirm Password:</label>
+                    <input type="password" name="confirm-password" id="confirm-password">
+                    <input className="btn submit" type="submit" value="Register">
+                    <p className="field">
+                        <span>Already have an account? <a href="#">Login here</a></span>
+                    </p>
+                </div>
+            </form>
+        </section>
+
+        <!-- Add Book Page ( Only for logged-in users ) -->
+        <section id="create-page" className="auth">
+            <form id="create">
+                <div className="container">
+                    <h1>Add a Book</h1>
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title" placeholder="Enter book title...">
+                    <label for="author">Author:</label>
+                    <input type="text" id="author" name="author" placeholder="Enter author name...">
+                    <label for="genre">Genre:</label>
+                    <input type="text" id="genre" name="genre" placeholder="e.g. Fantasy, Sci-Fi, Mystery...">
+                    <label for="book-img">Cover Image URL:</label>
+                    <input type="text" id="imageUrl" name="imageUrl" placeholder="https://...">
+                    <label for="description">Description:</label>
+                    <textarea name="description" id="description"
+                        placeholder="Write a short synopsis or review..."></textarea>
+                    <input className="btn submit" type="submit" value="Add Book">
+                </div>
+            </form>
+        </section>
+
+        <!-- Edit Book Page ( Only for the creator ) -->
+        <section id="edit-page" className="auth">
+            <form id="edit">
+                <div className="container">
+                    <h1>Edit Book</h1>
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title" value="">
+                    <label for="author">Author:</label>
+                    <input type="text" id="author" name="author" value="">
+                    <label for="genre">Genre:</label>
+                    <input type="text" id="genre" name="genre" value="">
+                    <label for="book-img">Cover Image URL:</label>
+                    <input type="text" id="imageUrl" name="imageUrl" value="">
+                    <label for="description">Description:</label>
+                    <textarea name="description" id="description"></textarea>
+                    <input className="btn submit" type="submit" value="Save Changes">
+                </div>
+            </form>
+        </section>
+
+        <!-- Details Page -->
+        <section id="book-details">
+            <h1>Book Details</h1>
+            <div className="info-section">
+
+                <div className="book-header">
+                    <img className="book-img" src="images/book-dune.jpg" />
+                    <h1>Dune</h1>
+                    <span className="book-author">by Frank Herbert</span>
+                    <p className="type">Science Fiction</p>
+                </div>
+
+                <p className="text">
+                    Set in the distant future amidst a feudal interstellar society, Dune tells the story of young
+                    Paul Atreides, whose family accepts the stewardship of the desert planet Arrakis. As the only
+                    producer of the most valuable substance in the universe — the spice melange — Arrakis is a
+                    world of immense political intrigue and danger.
+                </p>
+
+                <!-- Bonus ( for Guests and Users ) -->
+                <div className="details-comments">
+                    <h2>Reader Comments:</h2>
+                    <ul>
+                        <!-- list all comments for current book (if any) -->
+                        <li className="comment">
+                            <p>Content: A masterpiece of world-building. Absolutely gripping.</p>
+                        </li>
+                        <li className="comment">
+                            <p>Content: Changed how I think about science fiction entirely.</p>
+                        </li>
+                    </ul>
+                    <!-- Display paragraph: If there are no comments -->
+                    <p className="no-comment">No comments yet.</p>
+                </div>
+
+                <!-- Edit/Delete buttons ( Only for creator of this book ) -->
+                <div className="buttons">
+                    <a href="#" className="button">Edit</a>
+                    <a href="#" className="button">Delete</a>
+                </div>
+            </div>
+
+            <!-- Bonus -->
+            <!-- Add Comment ( Only for logged-in users who are NOT the creator ) -->
+            <article className="create-comment">
+                <label>Add a Comment:</label>
+                <form className="form">
+                    <textarea name="comment" placeholder="Share your thoughts on this book..."></textarea>
+                    <input className="btn submit" type="submit" value="Post Comment">
+                </form>
+            </article>
+        </section>
+
+        <!-- Catalogue -->
+        <section id="catalog-page">
+            <h1>All Books</h1>
+            <!-- Display div: with information about every book (if any) -->
+            <div className="allBooks">
+                <div className="allBooks-info">
+                    <img src="./images/book-dune.jpg">
+                    <h6>Science Fiction</h6>
+                    <h2>Dune</h2>
+                    <a href="#" className="details-button">Details</a>
+                </div>
+            </div>
+            <div className="allBooks">
+                <div className="allBooks-info">
+                    <img src="./images/book-dracula.jpg">
+                    <h6>Gothic Horror</h6>
+                    <h2>Dracula</h2>
+                    <a href="#" className="details-button">Details</a>
+                </div>
+            </div>
+            <div className="allBooks">
+                <div className="allBooks-info">
+                    <img src="./images/book-gatsby.jpg">
+                    <h6>Classic Fiction</h6>
+                    <h2>The Great Gatsby</h2>
+                    <a href="#" className="details-button">Details</a>
+                </div>
+            </div>
+            <!-- Display paragraph: If there are no books -->
+            <h3 className="no-articles">No books in the vault yet</h3>
+        </section>
+
     </div>
-  </nav>
-
-  <!-- ╔══════════════════════════════╗ -->
-  <!-- ║        VIEW CONTAINER        ║ -->
-  <!-- ╚══════════════════════════════╝ -->
-  <!--
-    All views are rendered into #main-content.
-    Each "page" is a JS module that:
-      1. Fetches data from the REST API
-      2. Builds HTML as a string (or DOM nodes)
-      3. Sets innerHTML of #main-content
-
-    You can structure this however you like —
-    hash routing, pushState, or a simple switch.
-  -->
-  <main id="main-content">
-    <!-- Views render here -->
-  </main>
-
-  <!-- ╔══════════════════════════════╗ -->
-  <!-- ║    HOME VIEW TEMPLATE        ║ -->
-  <!-- ╚══════════════════════════════╝ -->
-  <!--
-    HINT — Home page shows 3 recent picks (one per genre).
-    Endpoint: GET /data/books?sortBy=_createdOn%20desc&distinct=genre
-
-    Expected layout:
-      <section className="home-hero">...</section>
-      <section className="recent-picks">
-        <h2>Recently Added</h2>
-        <div className="picks-grid">
-        one .book-card per result 
-        </div>
-      </section>
-  -->
-
-  <!-- ╔══════════════════════════════╗ -->
-  <!-- ║  CATALOGUE VIEW TEMPLATE     ║ -->
-  <!-- ╚══════════════════════════════╝ -->
-  <!--
-    HINT — All Books page
-    Endpoint: GET /data/books?sortBy=_createdOn%20desc
-
-    Expected layout:
-      <section className="catalogue">
-        <h1>All Books</h1>
-        <div className="books-grid">
-          one .book-card per book
-         <p className="empty-state">No books in the vault yet.</p> if empty
-        </div>
-      </section>
-  -->
-
-  <!-- ╔══════════════════════════════╗ -->
-  <!-- ║   DETAILS VIEW TEMPLATE      ║ -->
-  <!-- ╚══════════════════════════════╝ -->
-  <!--
-    HINT — Book Details page
-    Endpoint: GET /data/books/:id
-
-    Show all fields. Conditionally show Edit/Delete if _ownerId === current user _id.
-    Include Comments section at the bottom (bonus).
-  -->
-
-  <!-- ╔══════════════════════════════╗ -->
-  <!-- ║  CREATE/EDIT VIEW TEMPLATE   ║ -->
-  <!-- ╚══════════════════════════════╝ -->
-  <!--
-    HINT — Add / Edit Book (auth required)
-    Fields: title, author, genre, imageUrl, description
-
-    Create: POST /data/books
-    Edit:   PUT  /data/books/:id  (pre-fill form with existing values)
-  -->
-
-  <!-- ╔══════════════════════════════╗ -->
-  <!-- ║  LOGIN / REGISTER TEMPLATES  ║ -->
-  <!-- ╚══════════════════════════════╝ -->
-  <!--
-    Login:    POST /users/login    { email, password }
-    Register: POST /users/register { email, password }
-    Logout:   GET  /users/logout   (X-Authorization header required)
-
-    On success → store { _id, email, accessToken } → redirect to Home
-  -->
-
-  <!-- ╔══════════════════════════════╗ -->
-  <!-- ║          YOUR JS             ║ -->
-  <!-- ╚══════════════════════════════╝ -->
-  <!--
-    Suggested entry point — uncomment when ready:
-    <script type="module" src="src/app.js"></script>
-  -->
-
 </body>
+
 </html>
