@@ -1,10 +1,10 @@
-import React from 'react'
+import '../../../styles/welcome.css';
 
 const Home = () => {
     return (
         <div>
             {/* <!-- Home Page --> */}
-            <section id="welcome-world">
+            <section className="home-hero">
 
                 <div className="welcome-message">
                     <h2>Discover your next</h2>
@@ -12,7 +12,7 @@ const Home = () => {
                 </div>
                 <img src="./images/hero-books.png" alt="hero"/>
 
-                    <div id="home-page">
+                    <div className="recent-picks">
                         <h1>Recent Picks</h1>
 
                         {/* <!-- Display div: with information about every book (if any) --> */}
