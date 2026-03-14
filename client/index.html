@@ -1,168 +1,152 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BookVault</title>
     <link rel="stylesheet" href="/styles/style.css" />
-  </head>
-  <body>
+</head>
+
+<body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-  </body>
+</body>
+
+
 </html>
 
-        <!-- Main Content -->
-        <main id="main-content">
-        </main>
+<!-- Main Content -->
+<main id="main-content">
+</main>
 
-        <!-- Register Page ( Only for Guest users ) -->
-        <section id="register-page" className="content auth">
-            <form id="register">
-                <div className="container">
-                    <div className="brand-logo"></div>
-                    <h1>Register</h1>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="reader@mail.com">
-                    <label for="pass">Password:</label>
-                    <input type="password" name="password" id="register-password">
-                    <label for="con-pass">Confirm Password:</label>
-                    <input type="password" name="confirm-password" id="confirm-password">
-                    <input className="btn submit" type="submit" value="Register">
-                    <p className="field">
-                        <span>Already have an account? <a href="#">Login here</a></span>
-                    </p>
-                </div>
-            </form>
-        </section>
 
-        <!-- Add Book Page ( Only for logged-in users ) -->
-        <section id="create-page" className="auth">
-            <form id="create">
-                <div className="container">
-                    <h1>Add a Book</h1>
-                    <label for="title">Title:</label>
-                    <input type="text" id="title" name="title" placeholder="Enter book title...">
-                    <label for="author">Author:</label>
-                    <input type="text" id="author" name="author" placeholder="Enter author name...">
-                    <label for="genre">Genre:</label>
-                    <input type="text" id="genre" name="genre" placeholder="e.g. Fantasy, Sci-Fi, Mystery...">
-                    <label for="book-img">Cover Image URL:</label>
-                    <input type="text" id="imageUrl" name="imageUrl" placeholder="https://...">
-                    <label for="description">Description:</label>
-                    <textarea name="description" id="description"
-                        placeholder="Write a short synopsis or review..."></textarea>
-                    <input className="btn submit" type="submit" value="Add Book">
-                </div>
-            </form>
-        </section>
 
-        <!-- Edit Book Page ( Only for the creator ) -->
-        <section id="edit-page" className="auth">
-            <form id="edit">
-                <div className="container">
-                    <h1>Edit Book</h1>
-                    <label for="title">Title:</label>
-                    <input type="text" id="title" name="title" value="">
-                    <label for="author">Author:</label>
-                    <input type="text" id="author" name="author" value="">
-                    <label for="genre">Genre:</label>
-                    <input type="text" id="genre" name="genre" value="">
-                    <label for="book-img">Cover Image URL:</label>
-                    <input type="text" id="imageUrl" name="imageUrl" value="">
-                    <label for="description">Description:</label>
-                    <textarea name="description" id="description"></textarea>
-                    <input className="btn submit" type="submit" value="Save Changes">
-                </div>
-            </form>
-        </section>
+<!-- Add Book Page ( Only for logged-in users ) -->
+<section id="create-page" className="auth">
+    <form id="create">
+        <div className="container">
+            <h1>Add a Book</h1>
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" placeholder="Enter book title...">
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" placeholder="Enter author name...">
+            <label for="genre">Genre:</label>
+            <input type="text" id="genre" name="genre" placeholder="e.g. Fantasy, Sci-Fi, Mystery...">
+            <label for="book-img">Cover Image URL:</label>
+            <input type="text" id="imageUrl" name="imageUrl" placeholder="https://...">
+            <label for="description">Description:</label>
+            <textarea name="description" id="description" placeholder="Write a short synopsis or review..."></textarea>
+            <input className="btn submit" type="submit" value="Add Book">
+        </div>
+    </form>
+</section>
 
-        <!-- Details Page -->
-        <section id="book-details">
-            <h1>Book Details</h1>
-            <div className="info-section">
+<!-- Edit Book Page ( Only for the creator ) -->
+<section id="edit-page" className="auth">
+    <form id="edit">
+        <div className="container">
+            <h1>Edit Book</h1>
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" value="">
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" value="">
+            <label for="genre">Genre:</label>
+            <input type="text" id="genre" name="genre" value="">
+            <label for="book-img">Cover Image URL:</label>
+            <input type="text" id="imageUrl" name="imageUrl" value="">
+            <label for="description">Description:</label>
+            <textarea name="description" id="description"></textarea>
+            <input className="btn submit" type="submit" value="Save Changes">
+        </div>
+    </form>
+</section>
 
-                <div className="book-header">
-                    <img className="book-img" src="images/book-dune.jpg" />
-                    <h1>Dune</h1>
-                    <span className="book-author">by Frank Herbert</span>
-                    <p className="type">Science Fiction</p>
-                </div>
+<!-- Details Page -->
+<section id="book-details">
+    <h1>Book Details</h1>
+    <div className="info-section">
 
-                <p className="text">
-                    Set in the distant future amidst a feudal interstellar society, Dune tells the story of young
-                    Paul Atreides, whose family accepts the stewardship of the desert planet Arrakis. As the only
-                    producer of the most valuable substance in the universe — the spice melange — Arrakis is a
-                    world of immense political intrigue and danger.
-                </p>
+        <div className="book-header">
+            <img className="book-img" src="images/book-dune.jpg" />
+            <h1>Dune</h1>
+            <span className="book-author">by Frank Herbert</span>
+            <p className="type">Science Fiction</p>
+        </div>
 
-                <!-- Bonus ( for Guests and Users ) -->
-                <div className="details-comments">
-                    <h2>Reader Comments:</h2>
-                    <ul>
-                        <!-- list all comments for current book (if any) -->
-                        <li className="comment">
-                            <p>Content: A masterpiece of world-building. Absolutely gripping.</p>
-                        </li>
-                        <li className="comment">
-                            <p>Content: Changed how I think about science fiction entirely.</p>
-                        </li>
-                    </ul>
-                    <!-- Display paragraph: If there are no comments -->
-                    <p className="no-comment">No comments yet.</p>
-                </div>
+        <p className="text">
+            Set in the distant future amidst a feudal interstellar society, Dune tells the story of young
+            Paul Atreides, whose family accepts the stewardship of the desert planet Arrakis. As the only
+            producer of the most valuable substance in the universe — the spice melange — Arrakis is a
+            world of immense political intrigue and danger.
+        </p>
 
-                <!-- Edit/Delete buttons ( Only for creator of this book ) -->
-                <div className="buttons">
-                    <a href="#" className="button">Edit</a>
-                    <a href="#" className="button">Delete</a>
-                </div>
-            </div>
+        <!-- Bonus ( for Guests and Users ) -->
+        <div className="details-comments">
+            <h2>Reader Comments:</h2>
+            <ul>
+                <!-- list all comments for current book (if any) -->
+                <li className="comment">
+                    <p>Content: A masterpiece of world-building. Absolutely gripping.</p>
+                </li>
+                <li className="comment">
+                    <p>Content: Changed how I think about science fiction entirely.</p>
+                </li>
+            </ul>
+            <!-- Display paragraph: If there are no comments -->
+            <p className="no-comment">No comments yet.</p>
+        </div>
 
-            <!-- Bonus -->
-            <!-- Add Comment ( Only for logged-in users who are NOT the creator ) -->
-            <article className="create-comment">
-                <label>Add a Comment:</label>
-                <form className="form">
-                    <textarea name="comment" placeholder="Share your thoughts on this book..."></textarea>
-                    <input className="btn submit" type="submit" value="Post Comment">
-                </form>
-            </article>
-        </section>
-
-        <!-- Catalogue -->
-        <section id="catalog-page">
-            <h1>All Books</h1>
-            <!-- Display div: with information about every book (if any) -->
-            <div className="allBooks">
-                <div className="allBooks-info">
-                    <img src="./images/book-dune.jpg">
-                    <h6>Science Fiction</h6>
-                    <h2>Dune</h2>
-                    <a href="#" className="details-button">Details</a>
-                </div>
-            </div>
-            <div className="allBooks">
-                <div className="allBooks-info">
-                    <img src="./images/book-dracula.jpg">
-                    <h6>Gothic Horror</h6>
-                    <h2>Dracula</h2>
-                    <a href="#" className="details-button">Details</a>
-                </div>
-            </div>
-            <div className="allBooks">
-                <div className="allBooks-info">
-                    <img src="./images/book-gatsby.jpg">
-                    <h6>Classic Fiction</h6>
-                    <h2>The Great Gatsby</h2>
-                    <a href="#" className="details-button">Details</a>
-                </div>
-            </div>
-            <!-- Display paragraph: If there are no books -->
-            <h3 className="no-articles">No books in the vault yet</h3>
-        </section>
-
+        <!-- Edit/Delete buttons ( Only for creator of this book ) -->
+        <div className="buttons">
+            <a href="#" className="button">Edit</a>
+            <a href="#" className="button">Delete</a>
+        </div>
     </div>
+
+    <!-- Bonus -->
+    <!-- Add Comment ( Only for logged-in users who are NOT the creator ) -->
+    <article className="create-comment">
+        <label>Add a Comment:</label>
+        <form className="form">
+            <textarea name="comment" placeholder="Share your thoughts on this book..."></textarea>
+            <input className="btn submit" type="submit" value="Post Comment">
+        </form>
+    </article>
+</section>
+
+<!-- Catalogue -->
+<section id="catalog-page">
+    <h1>All Books</h1>
+    <!-- Display div: with information about every book (if any) -->
+    <div className="allBooks">
+        <div className="allBooks-info">
+            <img src="./images/book-dune.jpg">
+            <h6>Science Fiction</h6>
+            <h2>Dune</h2>
+            <a href="#" className="details-button">Details</a>
+        </div>
+    </div>
+    <div className="allBooks">
+        <div className="allBooks-info">
+            <img src="./images/book-dracula.jpg">
+            <h6>Gothic Horror</h6>
+            <h2>Dracula</h2>
+            <a href="#" className="details-button">Details</a>
+        </div>
+    </div>
+    <div className="allBooks">
+        <div className="allBooks-info">
+            <img src="./images/book-gatsby.jpg">
+            <h6>Classic Fiction</h6>
+            <h2>The Great Gatsby</h2>
+            <a href="#" className="details-button">Details</a>
+        </div>
+    </div>
+    <!-- Display paragraph: If there are no books -->
+    <h3 className="no-articles">No books in the vault yet</h3>
+</section>
+
+</div>
 </body>
 
 </html>
